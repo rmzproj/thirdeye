@@ -1,0 +1,2 @@
+test code
+INSERT INTO t(dob) VALUES(TO_DATE('17/12/2015', 'DD/MM/YYYY'));

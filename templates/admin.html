@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>admin</title>
+	<script src="https://code.jquery.com/jquery-3.3.1.js"
+  			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  			crossorigin="anonymous"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJKQEiMYJvUzXzKeaGIK0754YOuTad_bQ"></script>
+	<script src="static/gmaps.js"></script>
+	<!-- ~~~~~~~~~~~~~~~~~~~style css~~~~~~~~~~~~~~~~~~~ -->
+	<style>
+	body {
+	background-image: url("static/bg.png");
+	background-size: 1700px 800px;
+  	display: inline-block;
+  	width: 100%;
+  	margin-top: 10px;}
+  	nav{float: left;
+	width: 100%;
+  	align-items: center;
+  	height: 150px;
+  	background-color: rgba(100, 100, 100,.5);
+  	padding: 0px;}
+  	.topnav {
+  background-color: #333;}
+  .topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: ##090610;
+  color: white;
+}
+
+.nav ul li{
+	display: inline-block;
+	width:100px;
+
+}
+
+.nav ul li a{
+	color: #FFF;
+	text-decoration:None;
+ }
+
+ .nav ul li a:hover{
+ 	color:#F00;
+ }
+
+</style>
+</head>
+<body>
+<header>
+	<h1>ADMIN PANEL</h1>
+</header>
+<div class="nav">
+  <ul>
+  		<li><a href="/asd">Home</a></li>
+  		<li><a href="/asd">Track location</a></li>
+  		<!-- <li><a href="/asd">Home</a></li>
+  		<li><a href="/asd">Home</a></li> -->
+  </ul>
+</div> 
+<div align="right">
+<div id='map' style="width:500px;height:500px;"></div>
+</div>
+	<script type="text/javascript">
+		window.onload = function(){
+
+  		map = new GMaps({
+  			div: '#map',
+  			lat: "{{data[0]['lat']}}",
+  			lng:"{{data[0]['lng']}}"
+      });
+  			
+  		map.addMarker({
+        lat: "{{data[0]['lat']}}",
+        lng:"{{data[0]['lng']}}"
+      })
+  }
+	</script>
+{{ data[0]['lat']}}
+<!-- <div style="background: #FFF;color: #000">
+	{{data[0]['lname	']}}
+</div> -->
+
+</body>
+</html>

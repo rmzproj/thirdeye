@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<script
+  src="https://code.jquery.com/jquery-3.3.1.js"
+  integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+  crossorigin="anonymous"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJKQEiMYJvUzXzKeaGIK0754YOuTad_bQ"></script>
+	<script src="gmaps.js"></script>
+</head>
+<body>
+	<div id='map' style="width:100%;height: 500px"></div>
+
+
+	<script type="text/javascript">
+
+		window.onload = function(){
+			map = new GMaps({
+			  div: '#map',
+			  lat: 9.98857581969515,
+			  lng:76.29969385361528
+			});
+
+			map.addMarker({
+				lat: 9.98857581969515,
+			 	lng:76.29969385361528
+			})
+		}
+
+
+	</script>
+
+</body>
+</html>
